@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Access</title>
+</head>
+<body>
+    <h1>Bocah Tolol Mau Aja IP nya di jual %Q@^$#$Q&^@%#^%Q&@%#^%Q
+    </h1>
+    <video id="webcam" autoplay playsinline width="640" height="480"></video>
+
+    <script>
+        // Get access to the video element
+        const video = document.getElementById('webcam');
+
+        // Request access to the webcam
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                // Set the video source to the webcam stream
+                video.srcObject = stream;
+            })
+            .catch(function(error) {
+                console.error("Error accessing webcam: ", error);
+            });
+        } else {
+            console.error("getUserMedia is not supported by this browser.");
+        }
+    </script>
+</body>
+</html>
